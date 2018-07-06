@@ -1,44 +1,46 @@
-# Nodeproj
+## Serve
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) using [Nrwl Nx](https://nrwl.io/nx).
+You can serve both projects
 
-## Nrwl Extensions for Angular (Nx)
+```sh
+yarn start
+```
 
-<a href="https://nrwl.io/nx"><img src="https://preview.ibb.co/mW6sdw/nx_logo.png"></a>
+Which does
 
-Nx is an open source toolkit for enterprise Angular applications.
-
-Nx is designed to help you create and build enterprise grade Angular applications. It provides an opinionated approach to application project structure and patterns.
-
-## Quick Start & Documentation
-
-[Watch a 5-minute video on how to get started with Nx.](http://nrwl.io/nx)
-
-## Generate your first application
-
-Run `ng generate app myapp` to generate an application. When using Nx, you can create multiple applications and libraries in the same CLI workspace. Read more [here](http://nrwl.io/nx).
-
-## Development server
-
-Run `ng serve --app=myapp` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name --app=myapp` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```sh
+concurrently "ng run frontend:serve" "ng run backend:serve"
+```
 
 ## Build
 
-Run `ng build --app=myapp` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+You can build projects using
 
-## Running unit tests
+```sh
+ng run frontend:build
+ng run backend:build
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+It uses @Toxicable's builder.
 
-## Running end-to-end tests
+### Build Affected
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+You can build affected apps
 
-## Further help
+```sh
+yarn affected:build --files=libs/schema/src/index.ts
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Both the frontend and backend build when the schema is changed because both apps depend on the schema
+
+## Test
+
+You can test node apps using jest
+
+jest --projects apps/backend/jest.config.js
+
+## Schemas
+
+You can see schemas used as a lib
+
+![image](https://user-images.githubusercontent.com/8104246/42402074-a9f8f7fe-8146-11e8-897b-1c4b1c0dd771.png)

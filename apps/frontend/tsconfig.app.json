@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/out-tsc/apps/frontend",
+    "module": "es2015",
+    "types": []
+  },
+  "exclude": ["node_modules", "src/test.ts", "**/*.spec.ts"],
+  "include": ["**/*.ts"]
+}
