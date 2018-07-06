@@ -6,20 +6,13 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "es5",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2017",
-      "dom"
-    ],
+    "target": "es6",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "dom"],
     "baseUrl": ".",
     "paths": {
+      "@nodeproj/schema": ["libs/schema/src/index.ts"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }
