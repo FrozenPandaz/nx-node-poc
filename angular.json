@@ -65,18 +65,11 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@nrwl/builders:jest",
           "options": {
-            "main": "apps/frontend/src/test.ts",
-            "polyfills": "apps/frontend/src/polyfills.ts",
+            "jestConfig": "apps/frontend/jest.config.js",
             "tsConfig": "apps/frontend/tsconfig.spec.json",
-            "karmaConfig": "apps/frontend/karma.conf.js",
-            "styles": ["apps/frontend/src/styles.css"],
-            "scripts": [],
-            "assets": [
-              "apps/frontend/src/favicon.ico",
-              "apps/frontend/src/assets"
-            ]
+            "setupFile": "apps/frontend/src/test.ts"
           }
         },
         "lint": {
@@ -154,18 +147,10 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@nrwl/builders:jest",
           "options": {
-            "main": "apps/backend/src/test.ts",
-            "polyfills": "apps/backend/src/polyfills.ts",
-            "tsConfig": "apps/backend/tsconfig.spec.json",
-            "karmaConfig": "apps/backend/karma.conf.js",
-            "styles": ["apps/backend/src/styles.css"],
-            "scripts": [],
-            "assets": [
-              "apps/backend/src/favicon.ico",
-              "apps/backend/src/assets"
-            ]
+            "jestConfig": "apps/backend/jest.config.js",
+            "tsConfig": "apps/backend/tsconfig.spec.json"
           }
         },
         "lint": {
@@ -186,14 +171,6 @@
       "projectType": "library",
       "prefix": "nodeproj",
       "architect": {
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "libs/schema/src/test.ts",
-            "tsConfig": "libs/schema/tsconfig.spec.json",
-            "karmaConfig": "libs/schema/karma.conf.js"
-          }
-        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {

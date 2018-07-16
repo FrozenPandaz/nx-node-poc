@@ -15,10 +15,10 @@
       "tags": []
     },
     "backend": {
-      "tags": []
+      "tags": ["server"]
     },
     "schema": {
-      "tags": []
+      "tags": ["universal"]
     }
   }
 }
