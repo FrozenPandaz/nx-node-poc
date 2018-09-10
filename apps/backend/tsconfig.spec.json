@@ -4,7 +4,7 @@
     "outDir": "../../dist/out-tsc/apps/backend",
     "module": "commonjs",
     "types": [
-      "jasmine",
+      "jest",
       "node"
     ]
   },

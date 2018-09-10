@@ -112,7 +112,7 @@
       "schematics": {},
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-webpack-nodejs:build",
+          "builder": "@nrwl/builders:build-node",
           "options": {
             "outputPath": "dist/apps/backend",
             "main": "apps/backend/src/main.ts",
@@ -130,7 +130,7 @@
           }
         },
         "serve": {
-          "builder": "@angular-devkit/build-webpack-nodejs:binary",
+          "builder": "@nrwl/builders:run-node",
           "options": {
             "buildTarget": "backend:build"
           },

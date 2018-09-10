@@ -12,10 +12,8 @@ describe('AppController', () => {
   });
 
   describe('data', () => {
-    it('should return data', () => {
-      expect(controller.data()).toEqual({
-        data: 'data'
-      });
+    test('should return data', () => {
+      expect(controller.data()).toMatchSnapshot();
     });
   });
 });
