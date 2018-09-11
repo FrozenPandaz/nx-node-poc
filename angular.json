@@ -91,8 +91,7 @@
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "apps/frontend-e2e/protractor.conf.js",
-            "devServerTarget": "frontend:serve"
+            "protractorConfig": "apps/frontend-e2e/protractor.conf.js"
           }
         },
         "lint": {
@@ -121,7 +120,13 @@
           "configurations": {
             "production": {
               "optimization": true,
-              "extractLicenses": true
+              "extractLicenses": true,
+              "fileReplacements": [
+                {
+                  "replace": "apps/backend/src/environments/environment.ts",
+                  "with": "apps/backend/src/environments/environment.prod.ts"
+                }
+              ]
             }
           }
         },
@@ -132,7 +137,7 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "backend:build:production"
+              "buildTarget": "backend:build:production"
             }
           }
         },

@@ -9,6 +9,6 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getText()).toEqual('{ "data": "data" }');
+    expect(page.getText()).toEqual('The Data is\n{ "data": "data" }');
   });
 });
