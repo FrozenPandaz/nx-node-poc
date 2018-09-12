@@ -4,4 +4,6 @@ const app = express();
 
 dataController(app);
 
-app.listen(3000);
+app.listen(3000, () => {
+  console.log('app listening');
+});

@@ -117,7 +117,7 @@
       "schematics": {},
       "architect": {
         "build": {
-          "builder": "@nrwl/builders:build-node",
+          "builder": "@nrwl/builders:node-build",
           "options": {
             "outputPath": "dist/apps/backend",
             "main": "apps/backend/src/main.ts",
@@ -137,7 +137,7 @@
           }
         },
         "serve": {
-          "builder": "@nrwl/builders:run-node",
+          "builder": "@nrwl/builders:node-execute",
           "options": {
             "buildTarget": "backend:build"
           },
@@ -196,7 +196,7 @@
       "schematics": {},
       "architect": {
         "build": {
-          "builder": "@nrwl/builders:build-node",
+          "builder": "@nrwl/builders:node-build",
           "options": {
             "outputPath": "dist/apps/expressapp",
             "main": "apps/expressapp/src/main.ts",
@@ -216,7 +216,7 @@
           }
         },
         "serve": {
-          "builder": "@nrwl/builders:run-node",
+          "builder": "@nrwl/builders:node-execute",
           "options": {
             "buildTarget": "expressapp:build"
           },
