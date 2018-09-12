@@ -23,7 +23,9 @@
               "apps/frontend/src/favicon.ico",
               "apps/frontend/src/assets"
             ],
-            "styles": ["apps/frontend/src/styles.css"],
+            "styles": [
+              "apps/frontend/src/styles.css"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -79,7 +81,9 @@
               "apps/frontend/tsconfig.app.json",
               "apps/frontend/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }
@@ -98,7 +102,9 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps/frontend-e2e/tsconfig.e2e.json",
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }
@@ -141,12 +147,6 @@
             }
           }
         },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "backend:build"
-          }
-        },
         "test": {
           "builder": "@nrwl/builders:jest",
           "options": {
@@ -161,7 +161,9 @@
               "apps/backend/tsconfig.app.json",
               "apps/backend/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }
@@ -179,7 +181,68 @@
               "libs/schema/tsconfig.lib.json",
               "libs/schema/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "expressapp": {
+      "root": "apps/expressapp/",
+      "sourceRoot": "apps/expressapp/src",
+      "projectType": "application",
+      "prefix": "nodeproj",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/builders:build-node",
+          "options": {
+            "outputPath": "dist/apps/expressapp",
+            "main": "apps/expressapp/src/main.ts",
+            "tsConfig": "apps/expressapp/tsconfig.app.json"
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "fileReplacements": [
+                {
+                  "replace": "apps/expressapp/src/environments/environment.ts",
+                  "with": "apps/expressapp/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/builders:run-node",
+          "options": {
+            "buildTarget": "expressapp:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "expressapp:build:production"
+            }
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/expressapp/jest.config.js",
+            "tsConfig": "apps/expressapp/tsconfig.spec.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/expressapp/tsconfig.app.json",
+              "apps/expressapp/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }

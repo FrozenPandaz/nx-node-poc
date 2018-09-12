@@ -15,10 +15,20 @@
       "tags": []
     },
     "backend": {
-      "tags": ["server"]
+      "tags": [
+        "server"
+      ]
     },
     "schema": {
-      "tags": ["universal"]
+      "tags": [
+        "universal"
+      ]
+    },
+    "expressapp": {
+      "tags": []
+    },
+    "expressapp-e2e": {
+      "tags": []
     }
   }
 }
