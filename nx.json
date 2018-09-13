@@ -29,6 +29,12 @@
     },
     "expressapp-e2e": {
       "tags": []
+    },
+    "apolloapp": {
+      "tags": []
+    },
+    "apolloapp-e2e": {
+      "tags": []
     }
   }
 }

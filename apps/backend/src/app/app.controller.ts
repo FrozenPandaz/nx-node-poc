@@ -7,6 +7,7 @@ export class AppController {
 
   @Get(DATA_ENDPOINT)
   data(): Data {
+    console.log('data2');
     return {
       data: 'data'
     };
