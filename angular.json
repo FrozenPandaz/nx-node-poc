@@ -109,9 +109,9 @@
         }
       }
     },
-    "backend": {
-      "root": "apps/backend/",
-      "sourceRoot": "apps/backend/src",
+    "nestjs": {
+      "root": "apps/nestjs/",
+      "sourceRoot": "apps/nestjs/src",
       "projectType": "application",
       "prefix": "nodeproj",
       "schematics": {},
@@ -119,9 +119,9 @@
         "build": {
           "builder": "@nrwl/builders:node-build",
           "options": {
-            "outputPath": "dist/apps/backend",
-            "main": "apps/backend/src/main.ts",
-            "tsConfig": "apps/backend/tsconfig.app.json"
+            "outputPath": "dist/apps/nestjs",
+            "main": "apps/nestjs/src/main.ts",
+            "tsConfig": "apps/nestjs/tsconfig.app.json"
           },
           "configurations": {
             "production": {
@@ -129,8 +129,8 @@
               "extractLicenses": true,
               "fileReplacements": [
                 {
-                  "replace": "apps/backend/src/environments/environment.ts",
-                  "with": "apps/backend/src/environments/environment.prod.ts"
+                  "replace": "apps/nestjs/src/environments/environment.ts",
+                  "with": "apps/nestjs/src/environments/environment.prod.ts"
                 }
               ]
             }
@@ -139,27 +139,27 @@
         "serve": {
           "builder": "@nrwl/builders:node-execute",
           "options": {
-            "buildTarget": "backend:build"
+            "buildTarget": "nestjs:build"
           },
           "configurations": {
             "production": {
-              "buildTarget": "backend:build:production"
+              "buildTarget": "nestjs:build:production"
             }
           }
         },
         "test": {
           "builder": "@nrwl/builders:jest",
           "options": {
-            "jestConfig": "apps/backend/jest.config.js",
-            "tsConfig": "apps/backend/tsconfig.spec.json"
+            "jestConfig": "apps/nestjs/jest.config.js",
+            "tsConfig": "apps/nestjs/tsconfig.spec.json"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "apps/backend/tsconfig.app.json",
-              "apps/backend/tsconfig.spec.json"
+              "apps/nestjs/tsconfig.app.json",
+              "apps/nestjs/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -188,9 +188,9 @@
         }
       }
     },
-    "expressapp": {
-      "root": "apps/expressapp/",
-      "sourceRoot": "apps/expressapp/src",
+    "express": {
+      "root": "apps/express/",
+      "sourceRoot": "apps/express/src",
       "projectType": "application",
       "prefix": "nodeproj",
       "schematics": {},
@@ -198,9 +198,9 @@
         "build": {
           "builder": "@nrwl/builders:node-build",
           "options": {
-            "outputPath": "dist/apps/expressapp",
-            "main": "apps/expressapp/src/main.ts",
-            "tsConfig": "apps/expressapp/tsconfig.app.json"
+            "outputPath": "dist/apps/express",
+            "main": "apps/express/src/main.ts",
+            "tsConfig": "apps/express/tsconfig.app.json"
           },
           "configurations": {
             "production": {
@@ -208,8 +208,8 @@
               "extractLicenses": true,
               "fileReplacements": [
                 {
-                  "replace": "apps/expressapp/src/environments/environment.ts",
-                  "with": "apps/expressapp/src/environments/environment.prod.ts"
+                  "replace": "apps/express/src/environments/environment.ts",
+                  "with": "apps/express/src/environments/environment.prod.ts"
                 }
               ]
             }
@@ -218,27 +218,27 @@
         "serve": {
           "builder": "@nrwl/builders:node-execute",
           "options": {
-            "buildTarget": "expressapp:build"
+            "buildTarget": "express:build"
           },
           "configurations": {
             "production": {
-              "buildTarget": "expressapp:build:production"
+              "buildTarget": "express:build:production"
             }
           }
         },
         "test": {
           "builder": "@nrwl/builders:jest",
           "options": {
-            "jestConfig": "apps/expressapp/jest.config.js",
-            "tsConfig": "apps/expressapp/tsconfig.spec.json"
+            "jestConfig": "apps/express/jest.config.js",
+            "tsConfig": "apps/express/tsconfig.spec.json"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "apps/expressapp/tsconfig.app.json",
-              "apps/expressapp/tsconfig.spec.json"
+              "apps/express/tsconfig.app.json",
+              "apps/express/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -247,9 +247,9 @@
         }
       }
     },
-    "apolloapp": {
-      "root": "apps/apolloapp/",
-      "sourceRoot": "apps/apolloapp/src",
+    "apollo": {
+      "root": "apps/apollo/",
+      "sourceRoot": "apps/apollo/src",
       "projectType": "application",
       "prefix": "nodeproj",
       "schematics": {},
@@ -257,16 +257,16 @@
         "build": {
           "builder": "@nrwl/builders:node-build",
           "options": {
-            "outputPath": "dist/apps/apolloapp",
-            "main": "apps/apolloapp/src/main.ts",
-            "tsConfig": "apps/apolloapp/tsconfig.app.json"
+            "outputPath": "dist/apps/apollo",
+            "main": "apps/apollo/src/main.ts",
+            "tsConfig": "apps/apollo/tsconfig.app.json"
           },
           "configurations": {
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/apolloapp/src/environments/environment.ts",
-                  "with": "apps/apolloapp/src/environments/environment.prod.ts"
+                  "replace": "apps/apollo/src/environments/environment.ts",
+                  "with": "apps/apollo/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -279,71 +279,34 @@
         "serve": {
           "builder": "@nrwl/builders:node-execute",
           "options": {
-            "buildTarget": "apolloapp:build"
+            "buildTarget": "apollo:build"
           },
           "configurations": {
             "production": {
-              "buildTarget": "apolloapp:build:production"
+              "buildTarget": "apollo:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "apolloapp:build"
+            "browserTarget": "apollo:build"
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@nrwl/builders:jest",
           "options": {
-            "main": "apps/apolloapp/src/test.ts",
-            "polyfills": "apps/apolloapp/src/polyfills.ts",
-            "tsConfig": "apps/apolloapp/tsconfig.spec.json",
-            "karmaConfig": "apps/apolloapp/karma.conf.js",
-            "styles": [
-              "apps/apolloapp/src/styles.css"
-            ],
-            "scripts": [],
-            "assets": [
-              "apps/apolloapp/src/favicon.ico",
-              "apps/apolloapp/src/assets"
-            ]
+            "jestConfig": "apps/apollo/jest.config.js",
+            "tsConfig": "apps/apollo/tsconfig.spec.json"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "apps/apolloapp/tsconfig.app.json",
-              "apps/apolloapp/tsconfig.spec.json"
+              "apps/apollo/tsconfig.app.json",
+              "apps/apollo/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "apolloapp-e2e": {
-      "root": "apps/apolloapp-e2e/",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "apps/apolloapp-e2e/protractor.conf.js",
-            "devServerTarget": "apolloapp:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "apolloapp:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": "apps/apolloapp-e2e/tsconfig.e2e.json",
             "exclude": [
               "**/node_modules/**"
             ]

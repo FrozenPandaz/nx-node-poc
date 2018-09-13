@@ -9,12 +9,13 @@
   },
   "projects": {
     "frontend": {
-      "tags": []
+      "tags": [],
+      "implicitDependencies": ["nestjs"]
     },
     "frontend-e2e": {
       "tags": []
     },
-    "backend": {
+    "nestjs": {
       "tags": [
         "server"
       ]
@@ -24,16 +25,10 @@
         "universal"
       ]
     },
-    "expressapp": {
+    "express": {
       "tags": []
     },
-    "expressapp-e2e": {
-      "tags": []
-    },
-    "apolloapp": {
-      "tags": []
-    },
-    "apolloapp-e2e": {
+    "apollo": {
       "tags": []
     }
   }
