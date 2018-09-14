@@ -73,6 +73,7 @@
     "@types/node": "~8.9.4",
     "codelyzer": "~4.2.1",
     "concurrently": "^3.6.0",
+    "husky": "^1.0.0-rc.14",
     "jasmine-core": "~2.99.1",
     "jasmine-marbles": "0.3.1",
     "jasmine-spec-reporter": "~4.2.1",
@@ -88,5 +89,10 @@
     "tslib": "^1.7.1",
     "tslint": "~5.9.1",
     "typescript": "2.9.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn affected:lint --uncommitted"
+    }
   }
 }
